@@ -65,7 +65,7 @@ export class Scuttleboat extends Scuttlebucket {
     a.on('synced', () => {
       a.end()
       ;(A as any)._clones -= 1
-      A.emit('unclone', B, (A as any)._clones)
+      A.emit('cloned', B, (A as any)._clones)
     })
     return B
   }

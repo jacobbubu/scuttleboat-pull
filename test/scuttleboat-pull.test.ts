@@ -59,7 +59,7 @@ describe('Scuttleboat', () => {
     const aMeta = A.addType('meta', 'Model') as Model
     aMeta.set('a', 9)
 
-    A.on('unclone', async (B, clones) => {
+    A.on('cloned', async (B, clones) => {
       expect(clones).toBe(0)
       const bMeta = B.get('meta') as Model
       expect(bMeta.get('a')).toBe(9)
